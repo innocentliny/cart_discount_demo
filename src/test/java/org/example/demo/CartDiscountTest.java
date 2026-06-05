@@ -68,7 +68,7 @@ public class CartDiscountTest {
     void test_combined_discounts() {
         given_product_in_cart(4, new Product("product_1", 10d, Set.of("滿量折扣")));
         given_product_in_cart(2, new Product("product_2", 500d, Set.of("滿額折扣")));
-        given_product_in_cart(6, new Product("product_3", 100d, Set.of("滿件折抵")));
+        given_product_in_cart(13, new Product("product_3", 100d, Set.of("滿件折抵")));
         given_product_in_cart(3, new Product("product_4", 100d, Set.of("雞湯塊")));
         given_product_in_cart(2, new Product("product_5", 20d, Set.of("第二件N元")));
 
@@ -82,7 +82,7 @@ public class CartDiscountTest {
 
         double product1FinalPrice = (10 + 10) * 0.88d * 2;
         double product2FinalPrice = 500 * 2 - 100;
-        double product3FinalPrice = 6 * 100d - 100;
+        double product3FinalPrice = (6 * 100d - 100) + (6 * 100d - 100) + 1 * 100d;
         double product4FinalPrice = 100 + 100 * 0.5 + 100;
         double product5FinalPrice = 20 + 10;
         then_checkout_price_is(product1FinalPrice +
