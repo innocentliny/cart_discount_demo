@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 滿件打折
+ * 同商品滿 N 件打折，例如滿 2 件打 9 折，買 3 件時，只有 2 件打折，1 件原價。
  */
 @Slf4j
 public class QuantityPercentageDiscountRule implements DiscountRule {

@@ -1,7 +1,7 @@
 package org.example.demo.domain;
 
 /**
- * 滿額折抵指定金額
+ * 指定商品滿最低金額就折抵指定金額，折抵不累計。
  */
 public class MinPriceDiscountRule implements DiscountRule {
     private final String targetTag;
