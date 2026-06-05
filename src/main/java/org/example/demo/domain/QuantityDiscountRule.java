@@ -3,7 +3,7 @@ package org.example.demo.domain;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 滿件折抵指定金額
+ * 指定商品滿 N 件折抵指定金額，折抵可累計。
  */
 @Slf4j
 public class QuantityDiscountRule implements DiscountRule {
@@ -23,7 +23,6 @@ public class QuantityDiscountRule implements DiscountRule {
         long remain = cart.getCount(this.targetTag);
 
         while ((remain -= quantity) >= 0) {
-            remain -= quantity;
             totalDiscount += discountAmount;
         }
 
